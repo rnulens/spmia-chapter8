@@ -1,9 +1,11 @@
 example.property: "I AM THE DEFAULT"
+redis.server: "192.168.178.48"
+redis.port: 6379
 spring.jpa.database: "POSTGRESQL"
 spring.datasource.platform:  "postgres"
 spring.jpa.show-sql: "true"
 spring.database.driverClassName: "org.postgresql.Driver"
-spring.datasource.url: "jdbc:postgresql://192.168.99.100:5432/eagle_eye_local"
+spring.datasource.url: "jdbc:postgresql://192.168.178.48:5432/eagle_eye_local"
 spring.datasource.username: "postgres"
 spring.datasource.password: "p0stgr@s"
 spring.datasource.testWhileIdle: "true"

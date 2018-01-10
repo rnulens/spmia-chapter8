@@ -1,0 +1,42 @@
+Run:
+- create organisation does not return the organisation!!
+body POST:
+{
+	"name": "test2",
+	"contactName": "raf",
+	"contactEmail": "r@af.com",
+	"contactPhone": "1234568"
+}
+
+returns nothing
+
+when checking the database (in docker) you see the created record
+
+http://192.168.178.47:5555/organizationservice/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c
+
+body PUT:
+{
+	"id": "442adb6e-fa58-47f3-9ca2-ed1fecdfe86c",
+	"name": "test2",
+	"contactName": "raf",
+	"contactEmail": "r@af.com",
+	"contactPhone": "1234568"
+}
+
+http://192.168.178.47:5555/organizationservice/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c
+
+invalidates redis cache!
+
+- get license for organisation:
+also here: when providing an invalid license or organisation id -> internal server error
+http://192.168.178.47:5555/licensingservice/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c/licenses/38777179-7094-4200-9d61-edb101c6ea84
+
+
+requested organisation objects are cached in redis (so NOT after create)
+
+
+TODO: 
+- IP's (*.48) -> ??
+- remove eureka and replace by kubernetes service
+- remove zuul and replace by kubernets services & ingress
+- replace configserver by kubernetes configMap

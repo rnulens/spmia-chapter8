@@ -31,6 +31,8 @@ public class LicenseService {
     public License getLicense(String organizationId,String licenseId) {
         License license = licenseRepository.findByOrganizationIdAndLicenseId(organizationId, licenseId);
 
+        if(license == null)
+        	return null;
         Organization org = getOrganization(organizationId);
 
         return license

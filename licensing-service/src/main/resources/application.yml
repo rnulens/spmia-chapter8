@@ -8,8 +8,8 @@ spring:
           group: licensingGroup
       kafka:
         binder:
-          zkNodes: localhost
-          brokers: localhost
+          zkNodes: 192.168.178.48
+          brokers: 192.168.178.48
 
 #        input:
 #          destination: orgChangeTopic

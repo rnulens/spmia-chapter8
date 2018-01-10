@@ -53,7 +53,7 @@ public class OrganizationRestTemplateClient {
 
         ResponseEntity<Organization> restExchange =
                 restTemplate.exchange(
-                        "http://zuulservice/api/organization/v1/organizations/{organizationId}",
+                        "http://zuulservice/organizationservice/v1/organizations/{organizationId}", // url depends on zuul config!
                         HttpMethod.GET,
                         null, Organization.class, organizationId);
 
